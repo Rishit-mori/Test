@@ -1,12 +1,12 @@
 {
-	"name": "note-taker",
+	"name": "note-taker-app",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"author": "rlgerma92",
 	"license": "ISC",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "echo \"Error:  no test specified\" && exit 1",
 		"start": "node server.js",
 		"watch": "nodemon server.js"
 	},
