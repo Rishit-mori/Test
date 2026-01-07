@@ -5,7 +5,10 @@
   "main": "src/main.js",
   "type": "module",
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "npx tsc",
+    "start": "node dist/main.js"
+    
   },
   "dependencies": {
     "node-appwrite": "^14.1.0"
