@@ -1,17 +1,29 @@
-import express from "express";
-import SocketConnection from "./socketConnection";
-import http from "http";
+const express = require("express");
 
 const app = express();
+app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-const server = http.createServer(app);
-
-server.listen(3000, () => {
-  console.log("Server is running on port 3000");
+// ✅ Express routes
+app.get("/health", (req, res) => {
+  res.json({ status: "healthy" });
 });
 
-const socketConnection = new SocketConnection(server);
-socketConnection.socketListener();
+app.post("/auth", (req, res) => {
+  const { token } = req.body;
+
+  if (!token) {
+    return res.status(400).json({ error: "Token required" });
+  }
+
+  res.json({ authenticated: true });
+});
+
+// ❌ DO NOT app.listen()
+
+// 🔥 Appwrite adapter
+module.exports = async ({ req, res }) => {
+  return new Promise((resolve) => {
+    app(req, res);
+    res.on("finish", resolve);
+  });
+};
