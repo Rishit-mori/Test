@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
-  "type": "commonjs"
+  "type": "commonjs",
   "scripts": {
     "format": "prettier --write .",
     "build": "npx tsc",
-    "start": "node dist/main.js"
+    "start": "node dist/index.js"
     
   },
   "dependencies": {
