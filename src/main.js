@@ -32,4 +32,4 @@ export default async ({ req, res, log, error }) => {
 
   return res.json({ error: "Not Found" }, 404);
 };
-console.log("Routes loaded:", Object.keys(routes));
+console.log("Routes loaded:");
