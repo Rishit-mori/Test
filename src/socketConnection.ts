@@ -16,6 +16,14 @@ class SocketConnection {
       console.log("A user connected");
     });
   }
+  public disconnectListener() {
+    this.io.on("disconnect", (socket) => {
+      console.log("A user disconnected");
+    });
+  }
+  public emitEvent(event: string, data: any) {
+    this.io.emit(event, data);
+  }
 }
 
 export default SocketConnection;

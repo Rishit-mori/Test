@@ -9,3 +9,5 @@ export const routes = {
     return res.json({ authenticated: true });
   }
 };
+
+console.log("Routes loaded:", Object.keys(routes));
