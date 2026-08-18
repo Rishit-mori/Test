@@ -27,3 +27,5 @@ class SocketConnection {
 }
 
 export default SocketConnection;
+
+console.log("hello world");
