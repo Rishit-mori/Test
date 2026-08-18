@@ -29,3 +29,7 @@ class SocketConnection {
 export default SocketConnection;
 
 console.log("hello world");
+
+const socketConnection = new SocketConnection(new HttpServer());
+socketConnection.socketListener();
+socketConnection.disconnectListener();
