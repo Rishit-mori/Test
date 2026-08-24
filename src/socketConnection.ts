@@ -33,3 +33,5 @@ console.log("hello world");
 const socketConnection = new SocketConnection(new HttpServer());
 socketConnection.socketListener();
 socketConnection.disconnectListener();
+
+console.log("hello world")

@@ -15,6 +15,7 @@ export default async ({ req, res, log, error }) => {
     log(`Total users: ${response.total}`);
   } catch (err) {
     error("Could not list users: " + err.message);
+    console.log("error detected", err);
   }
 
   // 🔥 Router
