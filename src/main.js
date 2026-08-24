@@ -9,15 +9,15 @@ export default async ({ req, res, log, error }) => {
 
   const users = new Users(client);
 
-  // Example Appwrite SDK call
   try {
     const response = await users.list();
     log(`Total users: ${response.total}`);
   } catch (err) {
     error("Could not list users: " + err.message);
+    console.log("error detected", err);
   }
 
-  // 🔥 Router
+  //  Router
   if (req.method === "GET" && req.path === "/ping") {
     return routes.ping({ req, res });
   }
@@ -30,5 +30,10 @@ export default async ({ req, res, log, error }) => {
     return routes.auth({ req, res });
   }
 
+  if (req.method === "GET" && req.path === "/users") {
+    return routes.listUsers({ req, res });
+  }
+
   return res.json({ error: "Not Found" }, 404);
 };
+console.log("Routes loaded:");
